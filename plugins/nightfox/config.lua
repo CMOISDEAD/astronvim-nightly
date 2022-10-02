@@ -1,10 +1,21 @@
 require("nightfox").setup {
   options = {
-    dim_inactive = true,
-    styles = { comments = "italic" },
+    transparent = true,
+    dim_inactive = false,
+    styles = {
+      comments = "italic", -- Value is any valid attr-list value `:help attr-list`
+      conditionals = "italic",
+      constants = "italic",
+      functions = "italic,bold",
+      keywords = "bold",
+    },
+    inverse = { -- Inverse highlight for different types
+      match_paren = true,
+      search = true,
+    },
     modules = {
       barbar = false,
-      dashboard = false,
+      dashboard = true,
       fern = false,
       fidget = false,
       gitgutter = false,
@@ -34,9 +45,10 @@ require("nightfox").setup {
   },
   groups = {
     all = {
+      NormalFloat = { bg = "#000000", link = "Normal" },
+      WhichKeyFloat = { bg = "#000000" },
       HighlightURL = { style = "underline" },
       MiniIndentscopeSymbol = { link = "PreProc" },
-      NormalFloat = { link = "Normal" },
       TelescopeBorder = { fg = "telescope.bg_alt", bg = "telescope.bg" },
       TelescopeNormal = { bg = "telescope.bg" },
       TelescopePreviewBorder = { fg = "telescope.bg", bg = "telescope.bg" },
