@@ -13,5 +13,6 @@ return {
     spellfile = "~/.config/nvim/lua/user/spell/en.utf-8.add",
     thesaurus = "~/.config/nvim/lua/user/spell/mthesaur.txt",
     wrap = false, -- soft wrap lines
+    cursorcolumn = true,
   },
 }
