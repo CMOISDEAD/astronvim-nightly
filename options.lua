@@ -14,5 +14,9 @@ return {
     thesaurus = "~/.config/nvim/lua/user/spell/mthesaur.txt",
     wrap = false, -- soft wrap lines
     cursorcolumn = true,
+    guifont = "AestheticIosevka Nerd Font Mono:h10",
+  },
+  g = {
+    user_emmet_leader_key = "<C-z>",
   },
 }

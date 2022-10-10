@@ -1,4 +1,10 @@
-local utils = require "user.utils"
+local utils    = require "user.utils"
+local Terminal = require('toggleterm.terminal').Terminal
+local xplr     = Terminal:new({ cmd = "xplr", hidden = true })
+
+function _xplr_toggle()
+  xplr:toggle()
+end
 
 return {
   n = {
@@ -36,6 +42,18 @@ return {
         p = { "<cmd>Telescope project<cr>", "Projects" },
         r = { "<cmd>Telescope registers<cr>", "Registers" },
         t = { "<cmd>Telescope colorscheme<cr>", "Themes" },
+        z = { "<cmd>Telescope zoxide list<cr>", "Zoxide" },
+      },
+
+      t = {
+        name = "Terminal",
+        x = {
+          function()
+            vim.cmd "silent! write"
+            _xplr_toggle()
+          end
+          , "File Manager"
+        },
       },
 
       m = {
@@ -121,10 +139,10 @@ return {
 
       n = {
         name = "Notes",
-        b = { function() require "zk.commands" "ZkBacklinks"() end, "Backlink Picker" },
-        d = { function() require "zk.commands" "ZkCd"() end, "Change Directory" },
-        r = { function() require "zk.commands" "ZkIndex"() end, "Refresh Index" },
-        l = { function() require "zk.commands" "ZkLinks"() end, "Link Picker" },
+        b = { function() require "zk.commands" "ZkBacklinks" () end, "Backlink Picker" },
+        d = { function() require "zk.commands" "ZkCd" () end, "Change Directory" },
+        r = { function() require "zk.commands" "ZkIndex" () end, "Refresh Index" },
+        l = { function() require "zk.commands" "ZkLinks" () end, "Link Picker" },
         s = { function() require("zk.commands").get "ZkNotes" { sort = { "modified" } } end, "Search" },
         n = {
           function() require("zk.commands").get "ZkNew" { dir = "personal", title = vim.fn.input "Title: " } end,
@@ -134,7 +152,7 @@ return {
           function() require("zk.commands").get "ZkNew" { dir = "work", title = vim.fn.input "Title: " } end,
           "New Work Note",
         },
-        t = { function() require("zk.commands").get "ZkTags"() end, "Tags" },
+        t = { function() require("zk.commands").get "ZkTags" () end, "Tags" },
         i = { "<Plug>(simple-todo-new-list-item)", "Insert Todo" },
         I = { "<Plug>(simple-todo-new-list-item-start-of-line)", "Convert to Todo" },
         o = { "<Plug>(simple-todo-below)", "Insert Todo Below" },

@@ -1,6 +1,6 @@
 require("nightfox").setup {
   options = {
-    transparent = true,
+    transparent = false,
     dim_inactive = false,
     styles = {
       comments = "italic", -- Value is any valid attr-list value `:help attr-list`

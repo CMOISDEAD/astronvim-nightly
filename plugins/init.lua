@@ -1,4 +1,9 @@
 return {
+  ["savq/melange"] = {},
+  ["rebelot/kanagawa.nvim"] = {},
+  ["sindrets/diffview.nvim"] = {},
+  ["mfussenegger/nvim-jdtls"] = {},
+  ["sainnhe/gruvbox-material"] = {},
   ["famiu/bufdelete.nvim"] = { disable = true },
   ["goolord/alpha-nvim"] = { disable = false },
   ["lukas-reineke/indent-blankline.nvim"] = { disable = false },
@@ -11,7 +16,7 @@ return {
   ["folke/zen-mode.nvim"] = require "user.plugins.zen-mode",
   ["hrsh7th/cmp-calc"] = require "user.plugins.cmp-calc",
   ["hrsh7th/cmp-emoji"] = require "user.plugins.cmp-emoji",
-  ["jose-elias-alvarez/typescript.nvim"] = require "user.plugins.typescript",
+  -- ["jose-elias-alvarez/typescript.nvim"] = require "user.plugins.typescript",
   ["lukas-reineke/headlines.nvim"] = require "user.plugins.headlines",
   ["mfussenegger/nvim-dap"] = require "user.plugins.dap",
   ["mtikekar/nvim-send-to-term"] = require "user.plugins.nvim-send-to-term",
@@ -19,6 +24,7 @@ return {
   ["nvim-telescope/telescope-hop.nvim"] = require "user.plugins.telescope-hop",
   ["nvim-telescope/telescope-media-files.nvim"] = require "user.plugins.telescope-media-files",
   ["nvim-telescope/telescope-project.nvim"] = require "user.plugins.telescope-project",
+  ["jvgrootveld/telescope-zoxide"] = require "user.plugins.telescope-zoxide",
   ["nvim-treesitter/nvim-treesitter-textobjects"] = require "user.plugins.nvim-treesitter-textobjects",
   ["phaazon/hop.nvim"] = require "user.plugins.hop",
   ["rcarriga/nvim-dap-ui"] = require "user.plugins.dapui",
@@ -26,9 +32,11 @@ return {
   ["akinsho/git-conflict.nvim"] = require "user.plugins.git-conflict",
   ["ur4ltz/surround.nvim"] = {
     event = "BufRead",
-    config = function() require("surround").setup { mappings_style = "surround", map_insert_mode = false } end,
+    config = function()
+      require("surround").setup {
+        mappings_style = "surround",
+        map_insert_mode = false,
+      }
+    end,
   },
-  ["sindrets/diffview.nvim"] = {},
-  ["mfussenegger/nvim-jdtls"] = {},
-  ["sainnhe/gruvbox-material"] = {},
 }
